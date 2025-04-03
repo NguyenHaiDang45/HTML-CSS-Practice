@@ -23,3 +23,9 @@
   <li>Dillinger requires <a href="https://nodejs.org/en">Node.js</a> v10+ to run.</li>
   <li>Install the dependencies and devDependencies and start the server.</li>
 </ul>
+```sh
+ cd Practice_HTML_CSS
+ npm run dev
+ npm run build
+ Open on web: http://localhost:1234
+ ```
