@@ -1,0 +1,152 @@
+@use "../abstracts/variables" as *;
+
+.header-main {
+    background-color: $background-color;
+    padding: 1rem 0;
+    position: relative;
+    box-shadow: 0 2px 5px #0000001a;
+    font-family: $primary-font;
+  
+    .container {
+      width: 100%;
+      max-width: $extra-lager;
+      margin: 0 auto;
+      padding: 0 1rem;
+    }
+  
+    .header-inner {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      position: relative;
+    }
+  
+    .header-logo {
+      font-size: 1.5rem;
+      font-weight: bold;
+      color: $primary-color;
+      text-decoration: none;
+    }
+  
+    .header-nav {
+      display: none;
+      position: absolute;
+      top: 100%;
+      left: 0;
+      width: 100%;
+      z-index: 1000;
+      box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
+  
+      ul {
+        list-style: none;
+        padding: 0;
+        margin: 0;
+  
+        li {
+          border-bottom: 1px solid rgba($primary-color, 0.1);
+  
+          &:last-child {
+            border-bottom: none;
+          }
+        }
+      }
+  
+      .header-nav-item {
+        padding: 1rem;
+        color: $primary-color;
+        text-decoration: none;
+        transition: color 0.3s;
+  
+        &:hover {
+          color: $text-color;
+          transform: scale(1.1);
+        }
+      }
+    }
+  
+    .header-auth {
+      display: none;
+      gap: 0.5rem;
+  
+      button {
+        padding: 0.5rem 1rem;
+        border-radius: 4px;
+        font-weight: 500;
+        cursor: pointer;
+        transition: all 0.3s;
+        font-family: $primary-font, sans-serif;
+      }
+  
+      .header-auth-login {
+        background-color: $button-bg;
+        color: white;
+  
+        &:hover {
+          background: rgba($button-bg, 0.1);
+        }
+      }
+  
+      .header-auth-signup {
+        background-color: $secondly-color;
+        color: white;
+
+        &:hover {
+          background: rgba($secondly-color, 0.1);
+        }
+      }
+    }
+  
+    .header-menu-item {
+      display: block;
+  
+      img {
+        width: 24px;
+        height: 24px;
+      }
+    }
+  
+    @media (min-width: $medium) {
+      .header-nav {
+        display: block;
+        position: static;
+        width: auto;
+        background: transparent;
+        box-shadow: none;
+  
+        ul {
+          display: flex;
+          gap: 1.5rem;
+  
+          li {
+            border-bottom: none;
+          }
+        }
+  
+        .header-nav-item {
+          padding: 0.5rem;
+        }
+      }
+  
+      .header-menu-item {
+        display: none;
+      }
+    }
+
+    @media (min-width: $extra-lager) {
+      .header-auth {
+        display: flex;
+      }
+  
+      .header-inner {
+        gap: 3rem;
+      }
+  
+      .header-logo {
+        font-size: 1.75rem;
+      }
+
+      .header-menu-item {
+        display: none;
+      }
+    }
+  }
