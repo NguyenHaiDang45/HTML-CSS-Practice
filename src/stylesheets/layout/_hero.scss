@@ -1,5 +1,5 @@
 @use "../abstracts/" as *;
-
+@use "sass:color";
 .hero {
   padding: 2rem;
   @include flex($direction: column, $align: center);
@@ -51,7 +51,7 @@
   }
 
   .description {
-    color: lighten($primary-color, 40%);
+    color: color.adjust($primary-color, $lightness: 40%);
     margin: 1rem 0;
     line-height: 1.6;
     font-size: 0.9375rem;
@@ -70,7 +70,7 @@
     margin-bottom: 2rem;
 
     &:hover {
-      background-color: darken($button-bg, 10%);
+      background-color: color.adjust($button-bg, $lightness: -10%);
     }
   }
 
@@ -126,7 +126,11 @@
     position: relative;
     width: 400px;
     height: 550px;
-    background: linear-gradient(to bottom, lighten($secondly-color, 10%), $secondly-color);
+    background: linear-gradient(
+      to bottom, 
+      color.adjust($secondly-color, $lightness: 10%),
+      $secondly-color
+    );
     border-radius: 50% / 35%;
     z-index: 1;
 
