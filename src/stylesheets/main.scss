@@ -1,3 +1,11 @@
-@use "base/reset" as *;
-@use "base/typography" as *;
-@use "layout/header" as *;
+// Abstracts
+@use "abstracts/variables" as *;
+@use "abstracts/mixins" as *;
+
+// Base
+@use "base/reset";
+@use "base/typography";
+
+// Layout
+@use "layout/header";
+@use "layout/hero";
