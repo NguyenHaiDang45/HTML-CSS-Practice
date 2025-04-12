@@ -1,7 +1,7 @@
 {
   "extends": "@parcel/config-default",
   "transformers": {
-    "*.{html,htm}": ["@parcel/transformer-html"],
+    "*.html": ["@parcel/transformer-posthtml"],
     "*.scss": ["@parcel/transformer-sass"]
   }
 }
